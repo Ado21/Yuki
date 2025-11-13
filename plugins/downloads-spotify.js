@@ -13,18 +13,13 @@ const handler = async (m, { conn, text, usedPrefix }) => {
     const data = {
       title: s.title || "Desconocido",
       artist: s.artist || "Desconocido",
-      album: "Desconocido",
       duration: s.duration || "Desconocido",
-      popularity: "Desconocido",
-      release: "Desconocido",
-      type: "spotify",
-      source: "adonix",
       image: s.thumbnail || null,
       download: res.data.downloadUrl,
-      url: text
+      url: s.spotifyUrl || text
     }
 
-    const caption = `「✦」Descargando *<${data.title}>*\n\nꕥ Autor » *${data.artist}*\n${data.album && data.album !== "Desconocido" ? `> ❑ Álbum » ${data.album}\n` : ''}${data.duration ? `ⴵ Duración » ${data.duration}\n` : ''}${data.popularity && data.popularity !== "Desconocido" ? `✰ Popularidad » ${data.popularity}\n` : ''}${data.release && data.release !== "Desconocido" ? `☁︎ Publicado » ${data.release}\n` : ''}${data.url ? `🜸 Enlace » ${data.url}` : ''}`
+    const caption = `「✦」Descargando *<${data.title}>*\n\nꕥ Autor » *${data.artist}*\nⴵ Duración » ${data.duration}\n🜸 Enlace » ${data.url}`
 
     const bannerBuffer = data.image ? await (await fetch(data.image)).buffer() : null
 
@@ -33,7 +28,7 @@ const handler = async (m, { conn, text, usedPrefix }) => {
       contextInfo: {
         externalAdReply: {
           title: '✧ s⍴᥆𝗍і𝖿ᥡ • mᥙsіᥴ ✧',
-          body: dev,
+          body: 'Ado',
           mediaType: 1,
           mediaUrl: data.url,
           sourceUrl: data.url,
