@@ -19,7 +19,7 @@ const handler = async (m, { conn, text, usedPrefix }) => {
       url: s.spotifyUrl || text
     }
 
-    const caption = `「✦」Descargando *<${data.title}>*\n\nꕥ Autor » *${data.artist}*\nⴵ Duración » ${data.duration}\n🜸 Enlace » ${data.url}`
+    const caption = `「✦」Descargando *<${data.title}>*\n\nꕥ Autor » *${data.artist}*\nⴵ Duración » *${data.duration}*\n🜸 Enlace » ${data.url}`
 
     const bannerBuffer = data.image ? await (await fetch(data.image)).buffer() : null
 
