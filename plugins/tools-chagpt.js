@@ -55,7 +55,7 @@ await m.react('✔️')
 break
 }
 case 'iavoz': case 'aivoz': case 'vozia': {
-if (!text) return conn.reply(m.chat, `❀ Ingrese el texto que desea convertir en voz.`, m)
+if (!text) return conn.reply(m.chat, `❀ Ingrese lo que desea decirle a la inteligencia artificial con voz`, m)
 await m.react('🕒')
 const apiURL = `${global.APIs.adonix.url}/ai/iavoz?apikey=${global.APIs.adonix.key}&q=${encodeURIComponent(text)}&voice=Jorge`
 const response = await axios.get(apiURL, { responseType: 'arraybuffer' })
