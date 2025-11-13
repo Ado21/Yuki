@@ -28,7 +28,7 @@ const handler = async (m, { conn, text, usedPrefix }) => {
       contextInfo: {
         externalAdReply: {
           title: '✧ s⍴᥆𝗍і𝖿ᥡ • mᥙsіᥴ ✧',
-          body: 'Ado',
+          body: dev,
           mediaType: 1,
           mediaUrl: data.url,
           sourceUrl: data.url,
