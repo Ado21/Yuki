@@ -26,7 +26,7 @@ const handler = async (m, { conn, text, usedPrefix }) => {
 
     const caption = `「✦」Descargando *<${data.title}>*\n\nꕥ Autor » *${data.artist}*\n${data.album && data.album !== "Desconocido" ? `> ❑ Álbum » ${data.album}\n` : ''}${data.duration ? `ⴵ Duración » ${data.duration}\n` : ''}${data.popularity && data.popularity !== "Desconocido" ? `✰ Popularidad » ${data.popularity}\n` : ''}${data.release && data.release !== "Desconocido" ? `☁︎ Publicado » ${data.release}\n` : ''}${data.url ? `🜸 Enlace » ${data.url}` : ''}`
 
-    const bannerBuffer = await (await fetch(global.botBanner)).buffer()
+    const bannerBuffer = await (await fetch(image)).buffer()
 
     await conn.sendMessage(m.chat, {
       text: caption,
